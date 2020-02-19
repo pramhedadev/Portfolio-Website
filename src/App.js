@@ -59,14 +59,14 @@ class App extends React.Component {
             render={() => (
               <HomePage
                 title={this.state.home.title}
-                subtitle={this.state.home.subTitle}
+                subTitle={this.state.home.subTitle}
                 text={this.state.home.text}
               />
             )}
           />
           <Route
             path="/about"
-            render={() => <AboutPage title={this.state.about.title} />}
+            render={() => <AboutPage title={this.state.about.about} />}
           />
           <Route
             path="/contact"
