@@ -13,7 +13,7 @@ code {
 }
 
 .h-card {
-  marigin: 20px;
+  margin: 20px;
 }
 
 .h-card-image {
@@ -36,4 +36,14 @@ code {
 .h-card-sub-title {
   font-size: 16px;
   margin: 0px;
+}
+
+.success-msg {
+  color: #57a773;
+  padding: 10px 15px;
+}
+
+.er-msg {
+  color: #ee6352;
+  padding: 10px 15px;
 }
