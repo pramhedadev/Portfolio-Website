@@ -1,8 +1,8 @@
 import React from "react";
 import HomeTitle from "../components/HomeTitle";
 import Content from "../components/Content";
-import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
+import { Form, Button } from "react-bootstrap";
+import Axios from "axios";
 
 class ContactPage extends React.Component {
   constructor(props) {
@@ -27,13 +27,36 @@ class ContactPage extends React.Component {
       [name]: value
     });
   };
-
-  hadleSubmit = event => {
+  handleSubmit = event => {
     event.preventDefault();
 
+    console.log(event.target);
     this.setState({
-      disabled: true // prevents double/multiple sending of emails
+      disabled: true // prevents double multiple sending of emails
     });
+
+    Axios.post("http://localhost:3030/api/email", this.state)
+      .then(res => {
+        if (res.data.success) {
+          this.setState({
+            disabled: false,
+            emailSent: true
+          });
+        } else {
+          this.setState({
+            disabled: false,
+            emailSent: false
+          });
+        }
+      })
+      .catch(err => {
+        console.log(err);
+
+        this.setState({
+          disabled: false,
+          emailSent: false
+        });
+      });
   };
 
   render() {
@@ -63,7 +86,7 @@ class ContactPage extends React.Component {
               />
             </Form.Group>
             <Form.Group>
-              <Form.Label htmlFor="email"> Message </Form.Label>
+              <Form.Label htmlFor="message"> Message </Form.Label>
               <Form.Control
                 id="message"
                 name="message"
@@ -87,7 +110,7 @@ class ContactPage extends React.Component {
               <p className="d-inline success-msg">Email Sent </p>
             )}
             {this.state.emailSent === false && (
-              <p className="d-inline success-msg">Email Not Sent </p>
+              <p className="d-inline err-msg">Email Not Sent </p>
             )}
           </Form>
         </Content>
