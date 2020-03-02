@@ -1,4 +1,21 @@
 {
+<<<<<<< HEAD
+  "name": "portfolio-api",
+  "version": "1.0.0",
+  "description": "api for website frontend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "hlela maqoqa",
+  "license": "ISC",
+  "dependencies": {
+    "@sendgrid/mail": "^6.5.3",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "nodemon": "^2.0.2"
+=======
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
@@ -35,5 +52,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+>>>>>>> 7e082e54ef56f73c98256cc94f01ca927ecd6513
   }
 }
