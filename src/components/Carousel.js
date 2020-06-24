@@ -1,61 +1,62 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import repiceranch from "../assets/images/recipe.png";
-import fsairbnb from "../assets/images/fsairbnb.jpg";
-import Card from "../components/Card";
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import Row from 'react-bootstrap/Row'
+import repiceranch from '../assets/images/recipe.png'
+import fsairbnb from '../assets/images/fsairbnb.jpg'
+import Card from '../components/Card'
+
 class Carousel extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
       items: [
         {
           id: 0,
-          title: "Recipe Ranch",
-          subTitle: "The cook rub for chefs",
+          title: 'H Recipes',
+          subTitle: 'Find your recipe',
           imgSrc: repiceranch,
-          link: "",
-          selected: false
+          link: 'https://github.com/codewarH/React-recipe-app.git',
+          selected: false,
         },
         {
           id: 1,
-          title: "Fs Air BnB",
-          subTitle: "AirBnB clone ",
+          title: 'Fs Air BnB',
+          subTitle: 'clone app ',
           imgSrc: fsairbnb,
-          link: "",
-          selected: false
-        }
-      ]
-    };
+          link: '',
+          selected: false,
+        },
+      ],
+    }
   }
 
   handleCardClick = (id, card) => {
-    let items = [...this.state.items];
+    let items = [...this.state.items]
 
-    items[id].selected = items[id].selected ? false : true;
+    items[id].selected = items[id].selected ? false : true
 
-    items.forEach(item => {
+    items.forEach((item) => {
       if (item.id !== id) {
-        item.selected = false;
+        item.selected = false
       }
-    });
+    })
 
     this.setState({
-      items
-    });
-  };
+      items,
+    })
+  }
 
-  makeItems = items => {
-    return items.map(item => {
+  makeItems = (items) => {
+    return items.map((item) => {
       return (
         <Card
           item={item}
-          click={e => this.handleCardClick(item.id, e)}
+          click={(e) => this.handleCardClick(item.id, e)}
           key={item.id}
         />
-      );
-    });
-  };
+      )
+    })
+  }
 
   render() {
     return (
@@ -64,8 +65,8 @@ class Carousel extends React.Component {
           {this.makeItems(this.state.items)}
         </Row>
       </Container>
-    );
+    )
   }
 }
 
-export default Carousel;
+export default Carousel

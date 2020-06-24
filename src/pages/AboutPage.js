@@ -1,58 +1,69 @@
-import React from "react";
-import HomeTitle from "../components/HomeTitle";
-import Content from "../components/Content";
+import React from 'react'
+import HomeTitle from '../components/HomeTitle'
+import Content from '../components/Content'
+import '../styles/about.css'
+// import MyImage from '../assets/images/hlelazepeto1.png'
 
 function AboutPage(props) {
   return (
     <div>
       <HomeTitle title={props.title} />
+      {/* 
+      <div className="header-image d-flex justify-content-center mt-5">
+        <img src={MyImage} alt="my-image">
+          {' '}
+          {props.children}
+        </img>
+      </div> */}
 
       <Content>
         <p>
-          Hello, my name is Hlela. I'm a full stack engineer with experience in
-          Angular, AngularJS, Express JS, Node JS, Oracle SQL, MongoDB, and
-          React.
-        </p>
-
-        <p>
-          My dream is to one day start my own business and become an
-          entrepreneur (currently working on some ideas).
-        </p>
-
-        <p>
-          I'm constantly learning new things. currently those things include
-          gaining more experience with MongoDB, React, Express JS, and Node JS
-        </p>
-
-        <p>
-          My latest project, Dev Grub, is a cookbook for developers. You can
-          check it out{" "}
+          <p> Hey there, </p> I'm Hlela Maqoqa , also known as
           <a
-            href="https://devgrub.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            style={{ color: 'black' }}
+            href="https://www.instagram.com/pram_heda_dev/"
           >
-            here
-          </a>
-          , or on the homepage. It is built with Angular, MongoDB, Express JS,
-          and Node JS. However, I will be rebuilding it using React in the
-          coming months
-        </p>
+            {' '}
+            pram_heda_dev{' '}
+          </a>{' '}
+          on Instagram. I'm a fullstack developer in the motherland of South
+          Africa , Cape Town.
+          <p>
+            I'm passionate about designing and building and I am currently using
+            Reactjs as my front-end framework.
+          </p>
+          <h2> My Skills </h2>
+          <div className="skills-container">
+            <ul>
+              <div className="skills-column">
+                <li>HTML5/CSS5 </li>
+                <li>Bootstrap </li>
 
-        <p>
-          When I'm not learning something new chances are I'm creating some
-          YouTube videos. You can find those{" "}
-          <a
-            href="http://www.youtube.com/c/GarrettLove1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>
+                <li> AdobeXD</li>
+              </div>
+              <div className="skills-column">
+                <li>JavaScript </li>
+
+                <li>Java </li>
+
+                <li> TypeScript</li>
+              </div>
+              <div className="skills-column">
+                <li>React.js </li>
+                <li> Angular.js</li>
+                <li>SQL </li>
+              </div>
+              <div className="skills-column">
+                <li>Firebase </li>
+                <li>Express</li>
+                <li> Git</li>
+              </div>
+            </ul>
+          </div>
         </p>
       </Content>
     </div>
-  );
+  )
 }
 
-export default AboutPage;
+export default AboutPage

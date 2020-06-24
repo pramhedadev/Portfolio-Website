@@ -1,36 +1,36 @@
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import Footer from "./components/Footer";
-import HomePage from "./pages/HomePage";
-import AboutPage from "./pages/AboutPage";
-import ContactPage from "./pages/ContactPage";
+import React from 'react'
+import Container from 'react-bootstrap/Container'
+import Navbar from 'react-bootstrap/Navbar'
+import Nav from 'react-bootstrap/Nav'
+import Footer from './components/Footer'
+import HomePage from './pages/HomePage'
+import AboutPage from './pages/AboutPage'
+import ContactPage from './pages/ContactPage'
 
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 
 class App extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      title: "Hlela Maqoqa",
+      title: 'Hlela Maqoqa',
       headerLinks: [
-        { title: "Home", path: "/" },
-        { title: "About", path: "/about" },
-        { title: "Contact", path: "/contact" }
+        { title: 'Home', path: '/' },
+        { title: 'About', path: '/about' },
+        { title: 'Contact', path: '/contact' },
       ],
       home: {
-        title: "Taking up the tech space",
-        subTitle: "Projects",
-        text: "Check out my projects below"
+        title: 'Designer   Developer   Creative',
+        subTitle: 'Projects',
+        text: 'Check out my projects below',
       },
       about: {
-        title: "About me"
+        title: 'About me',
       },
       contact: {
-        title: "Let's talk "
-      }
-    };
+        title: "Let's talk ",
+      },
+    }
   }
   render() {
     return (
@@ -76,8 +76,8 @@ class App extends React.Component {
           <Footer />
         </Container>
       </Router>
-    );
+    )
   }
 }
 
-export default App;
+export default App

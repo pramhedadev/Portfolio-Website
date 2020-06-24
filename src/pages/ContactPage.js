@@ -1,63 +1,63 @@
-import React from "react";
-import HomeTitle from "../components/HomeTitle";
-import Content from "../components/Content";
-import { Form, Button } from "react-bootstrap";
-import Axios from "axios";
+import React from 'react'
+import HomeTitle from '../components/HomeTitle'
+import Content from '../components/Content'
+import { Form, Button } from 'react-bootstrap'
+import Axios from 'axios'
 
 class ContactPage extends React.Component {
   constructor(props) {
-    super(props);
+    super(props)
     this.state = {
-      name: "",
-      email: "",
-      message: "",
+      name: '',
+      email: '',
+      message: '',
       disabled: false,
-      emailSent: null
-    };
+      emailSent: null,
+    }
   }
 
-  handleChange = event => {
+  handleChange = (event) => {
     // console.log(event);
 
-    const target = event.target;
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = target.name;
+    const target = event.target
+    const value = target.type === 'checkbox' ? target.checked : target.value
+    const name = target.name
 
     this.setState({
-      [name]: value
-    });
-  };
-  handleSubmit = event => {
-    event.preventDefault();
+      [name]: value,
+    })
+  }
+  handleSubmit = (event) => {
+    event.preventDefault()
 
-    console.log(event.target);
+    console.log(event.target)
     this.setState({
-      disabled: true // prevents double multiple sending of emails
-    });
+      disabled: true, // prevents double multiple sending of emails
+    })
 
-    Axios.post("http://localhost:3030/api/email", this.state)
-      .then(res => {
+    Axios.post('http://localhost:3030/api/email', this.state)
+      .then((res) => {
         if (res.data.success) {
           this.setState({
             disabled: false,
-            emailSent: true
-          });
+            emailSent: true,
+          })
         } else {
           this.setState({
             disabled: false,
-            emailSent: false
-          });
+            emailSent: false,
+          })
         }
       })
-      .catch(err => {
-        console.log(err);
+      .catch((err) => {
+        console.log(err)
 
         this.setState({
           disabled: false,
-          emailSent: false
-        });
-      });
-  };
+          emailSent: false,
+        })
+      })
+  }
 
   render() {
     return (
@@ -106,16 +106,16 @@ class ContactPage extends React.Component {
               Send
             </Button>
 
-            {this.state.emailSent === true && (
+            {this.state.emailSent === true && ( // revisit this
               <p className="d-inline success-msg">Email Sent </p>
             )}
-            {this.state.emailSent === false && (
+            {this.state.emailSent === false && ( // revisit this line
               <p className="d-inline err-msg">Email Not Sent </p>
             )}
           </Form>
         </Content>
       </div>
-    );
+    )
   }
 }
-export default ContactPage;
+export default ContactPage

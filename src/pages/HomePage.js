@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react'
 
-import HomeTitle from "../components/HomeTitle";
-import Carousel from "../components/Carousel";
+import HomeTitle from '../components/HomeTitle'
+import Carousel from '../components/Carousel'
 
 function HomePage(props) {
   return (
@@ -13,6 +13,6 @@ function HomePage(props) {
       />
       <Carousel />
     </div>
-  );
+  )
 }
-export default HomePage;
+export default HomePage
