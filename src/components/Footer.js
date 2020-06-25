@@ -1,10 +1,7 @@
-import React from 'react'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Instagram from '../assets/images/instagram.png'
-import Github from '../assets/images/github.png'
-import LinkedIn from '../assets/images/linkedIn.png'
+import React from "react";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 function Footer() {
   return (
@@ -14,17 +11,10 @@ function Footer() {
           <Col className="p-0" md={3} sm={12}>
             This site was made by @Hlela Maqoqa
           </Col>
-          <Col className="p-0 d-flex justify-content-end" md={3}>
-            <p>
-              {' '}
-              <a href=" https://www.instagram.com/pram_heda_dev/">
-                <img src="instagram.png" alt=" instagram logo" />
-              </a>{' '}
-            </p>
-          </Col>
+          <Col className="p-0 d-flex justify-content-end" md={3}></Col>
         </Row>
       </Container>
     </footer>
-  )
+  );
 }
-export default Footer
+export default Footer;
